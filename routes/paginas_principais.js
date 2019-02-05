@@ -38,8 +38,6 @@ module.exports = function(app){
         // não precisa escapar o params.id se a query ao banco for feita com ?
         produtosDAO.mostrar_registro(request.params.id,function(erro,resultados){
             if(erro) return next({erro}); // tem que enviar como objeto o retorno
-
-
             // Enviando mais de um tipo de resposta de um mesmo end point
             // html e json
             response.format({
