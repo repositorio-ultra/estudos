@@ -5,11 +5,12 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "nodemon app"
+    "dev": "nodemon app"
   },
   "author": "Ricardo",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^4.2.1",
     "consign": "^0.1.6",
     "ejs": "^2.6.1",
     "express": "^4.16.4",

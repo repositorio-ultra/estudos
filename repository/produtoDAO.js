@@ -10,6 +10,16 @@ class ProdutoDAO
         this.connection.query("SELECT * FROM produto WHERE produto_status = 1 LIMIT 100;", callback);
     }
 
+    mostrar_registro(id, callback)
+    {
+
+    }
+
+    editar(produto,callback)
+    {
+        
+    }
+
 }
 
 module.exports = ()=>ProdutoDAO;
