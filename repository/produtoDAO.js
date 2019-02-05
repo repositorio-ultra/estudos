@@ -12,12 +12,14 @@ class ProdutoDAO
 
     mostrar_registro(id, callback)
     {
-
+        let sql_1 =  "SELECT * FROM produto WHERE  id = ? ";
+        let consulta = this.connection.query(sql_1 , id, callback);
+        console.log(consulta.sql);
     }
 
     editar(produto,callback)
     {
-        
+
     }
 
 }

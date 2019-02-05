@@ -33,8 +33,8 @@ module.exports = ()=>{
                 response.status(400).render("erro" , {erro, objeto});
         })
 
-        app.use((error, request, response, next)=>{
-                response.status(500).render("erro" , error);
+        app.use((erro, request, response, next)=>{
+                response.status(500).render("erro" , {erro});
                 (error)=>{ console.log(error)}
         })
 
