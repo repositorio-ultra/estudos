@@ -25,10 +25,7 @@ module.exports = ()=>{
 
         app.use((request, response, next)=>{
                 let erro = request.originalUrl ;
-                const objeto = [
-                                        {titulo: erro, body: "esta página está com erro"},
-                                        {titulo: "Segundo Título", body: "esta página está com erro também"},
-                                ];
+                const objeto = {titulo: erro, body: "\nesta página está com erro"};
                 console.log(erro);
                 response.status(400).render("erro" , {erro, objeto});
         })

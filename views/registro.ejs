@@ -4,9 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <title>Editar Produto</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Editar Dados do Produto</h1>
+        <form action="../salvar_edicao/<%= produto[0].id %>" method="post">
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input class="form-control" type="text" name="id" id="id" value="<%= produto[0].id %>" readonly>
+            </div>
+            <div class="form-group">
+                <label for="id">Código</label>
+                <input class="form-control" type="text" name="codigo" id="codigo" value="<%= produto[0].codigo %>">
+            </div>
+            <div class="form-group">
+                <label for="id">Nome Completo</label>
+                <input class="form-control" type="text" name="nome_completo" id="nome_completo" value="<%= produto[0].nome_completo %>">
+            </div>
+            <div class="form-group">
+                <label for="id">Produto Laboratório</label>
+                <input class="form-control" type="text" name="produto_laboratorio" id="produto_laboratorio" value="<%= produto[0].produto_laboratorio %>">
+            </div>
+            <div class="form-group">
+                <label for="id">Peso</label>
+                <input class="form-control" type="text" name="peso" id="peso" value="<%= produto[0].peso %>">
+            </div>
+            <div class="form-group">
+                <label for="id">Produto Atributo</label>
+                <input class="form-control" type="text" name="produto_atributo" id="produto_atributo" value="<%= produto[0].produto_atributo %>">
+            </div>
+            <div class="form-group">
+                <label for="id">Produto Status</label>
+                <input class="form-control" type="text" name="produto_status" id="produto_status" value="<%= produto[0].produto_status %>">
+            </div>
+            <div class="form-group">
+                <label for="id">Produto Liberação Entrega</label>
+                <input class="form-control" type="text" name="produto_lib_entrega" id="produto_lib_entrega" value="<%= produto[0].produto_lib_entrega %>">
+            </div>
+            <div class="form-group">
+                <label for="id">Frete Grátis</label>
+                <input class="form-control" type="text" name="frete_gratis" id="frete_gratis" value="<%= produto[0].frete_gratis %>">
+            </div>
+            <div class="form-group">
+                <label for="id">Inclusão</label>
+                <input class="form-control" type="text" name="data_inclusao" id="data_inclusao" value="<%= produto[0].data_inclusao %>" readonly>
+            </div>
+            <div class="form-group">
+                <label for="id">Atualização</label>
+                <input class="form-control" type="text" name="data_atualizacao" id="data_atualizacao" value="<%= produto[0].data_atualizacao %>">
+            </div>
+            <div class="form-group">
+                <label for="id">Imagem</label>
+                <input class="form-control" type="text" name="imagem" id="imagem" value="<%= produto[0].imagem %>">
+            </div>
+            <div class="form-group">
+                <label for="id">Comissão</label>
+                <input class="form-control" type="text" name="comissao" id="comissao" value="<%= produto[0].comissao %>">
+            </div>
+            <div class="form-group">
+                <label for="id">Tipo de Comissão</label>
+                <input class="form-control" type="text" name="tipo_comissao" id="tipo_comissao" value="<%= produto[0].tipo_comissao %>">
+            </div>
+            <input type="submit" value="Salvar" class="btn btn-success"> &nbsp; &nbsp; <input type="button" value="Voltar" class="btn btn-danger" onclick="window.location('estes_produtos')">
+        </form>
+    </div>
+
 </body>
 </html>
