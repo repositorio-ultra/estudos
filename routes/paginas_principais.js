@@ -56,8 +56,34 @@ module.exports = function(app){
     });
 
     app.post("/produtos/salvar_edicao/:id", function(request,response,next){
-        const dados = request.body;
-        console.log(dados.nome_completo);
+        const produto = request.body;
+        const connection = app.config.connectionFactory(); //caminho do arquivo
+        const produtosDAO  = new app.repository.produtoDAO(connection); //caminho do arquivo
+            // não precisa escapar o params.id se a query ao banco for feita com ?
+        produtosDAO.salvar_edicao(request.params.id,produto,function(error, results){
+            if(error)
+            {
+                response.render("erro", {erro: error});
+            }
+            else
+            {
+                response.redirect('../../estes_produtos');
+            }
+        });
     });
 
+    app.post("/produtos/excluir/:id", function(request, response, next){
+
+        produtosDAO.excluir(request.params.id,function(error, results){
+            if(error)
+            {
+                response.render("erro", {erro: error});
+            }
+            else
+            {
+                response.redirect('../../estes_produtos');
+            }
+        });
+
+    });
 }

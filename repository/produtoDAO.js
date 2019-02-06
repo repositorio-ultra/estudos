@@ -21,9 +21,28 @@ class ProdutoDAO
 
     }
 
-    salvar_edicao(produto,callback)
+    salvar_edicao(id,produto, callback)
     {
-
+        let sql       =  `update produtos set 
+                            nome_completo = ?,
+                            produto_laboratorio = ?,
+                            peso = ?,
+                            produto_atributo = ?,
+                            produto_status = ?,
+                            produto_lib_entrega = ?,
+                            frete_gratis = ?,
+                            data_atualizacao = ?,
+                            imagem = ?,
+                            comissao = ?,
+                            tipo_comissao = ?
+                            where id = ?
+                            `;
+        let atualizar = this.connection.query(
+            sql,
+            [produto.nome_completo,produto.produto_laboratorio,produto.peso,produto.produto_atributo,produto.produto_status,
+                produto.produto_lib_entrega,produto.frete_gratis,produto.data_atualizacao,produto.imagem,produto.comissao,produto.tipo_comissao, id],
+                callback
+            );
     }
 
 }
