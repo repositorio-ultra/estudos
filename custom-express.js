@@ -32,7 +32,7 @@ module.exports = ()=>{
 
         app.use((erro, request, response, next)=>{
                 response.status(500).render("erro" , {erro});
-                (error)=>{ console.log(error)}
+                (erro)=>console.log(erro);
         })
 
 
