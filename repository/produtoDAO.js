@@ -23,7 +23,7 @@ class ProdutoDAO
 
     salvar_edicao(id,produto, callback)
     {
-        let sql       =  `update produtos set 
+        let sql       =  `update produto set 
                             nome_completo = ?,
                             produto_laboratorio = ?,
                             peso = ?,
